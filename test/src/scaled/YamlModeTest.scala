@@ -34,11 +34,11 @@ class YamlModeTest {
   def yaml = getClass.getClassLoader.getResource("Yaml.ndf")
   val grammars = Seq(Grammar.parseNDF(yaml))
 
-  // @Test def dumpGrammar () {
+  // @Test def dumpGrammar () :Unit = {
   //   Grammar.parseNDF(yaml).print(System.out)
   // }
 
-  @Test def testScoper () {
+  @Test def testScoper () :Unit = {
     val buffer = BufferImpl(new TextStore("Test.yaml", "", testYamlCode))
     val scoper = Grammar.testScoper(
       grammars, buffer, List(new Selector.Processor(new YamlGrammarPlugin().effacers)))

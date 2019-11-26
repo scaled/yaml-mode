@@ -40,7 +40,7 @@ class YamlGrammarPlugin extends GrammarPlugin {
        desc="A major mode for editing YAML files.")
 class YamlMode (env :Env) extends GrammarCodeMode(env) {
 
-  override def dispose () {} // nada for now
+  override def dispose () :Unit = {} // nada for now
 
   override def langScope = "source.yaml"
 
